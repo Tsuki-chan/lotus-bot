@@ -22,7 +22,11 @@ async def on_message(message):
     await client.send_message(message.channel, "<@%s> Pong!" % (userID))
 
   if message.content.lower().startswith('~meh'):
-    await client.send_message(message.channel, "meh!") 
+    await client.send_message(message.channel, "meh!")
+
+  if message.content.lower() == ("good night") or message.content.lower() == ("nighty") or message.content.lower() == ("gn"):
+    userID = message.author.id
+    await client.send_message(message.channel, ("<@%s> Sleep well, my precious meh-mber ^^ :heart:") % (userID))
 
   if message.content.lower().startswith('~f'):
     userID = message.author.id
@@ -34,7 +38,7 @@ async def on_message(message):
 __**Commands**__
 ```- the prefix is a "~" not a "-"
 - you can trigger a command by using ~:
-  cookie, f, ping, say [text], meh
+  cookie, f, ping, say [text], meh, gn
 - the developer @Biscuit#0061 is inexperienced
 - updates comming soon! (hopfully)```""")
 
@@ -56,5 +60,6 @@ __**Commands**__
     else:
       await client.delete_message(message)
       await client.send_message(message.channel, "Please only answer with yes or no")
+
 
 client.run("Token")
