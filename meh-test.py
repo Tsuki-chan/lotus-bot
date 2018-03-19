@@ -1,11 +1,11 @@
 import discord
-from discord.ext.command import Bot
+from discord.ext.commands import Bot
 from discord.ext import commands
-import aysnico
+import asyncio
 import time
 
 Client = discord.Client()
-client = command.Bot(comman_prefix = "~")
+client = commands.Bot(command_prefix = "~")
 
 @client.event
 async def on_ready()
@@ -29,6 +29,9 @@ async def on_message(message):
       if message.content == "yes":
          await client.send_message(message.channel, "Nice, me too. Bloop!")
       elif message.content == "no":
+	 await client.send_message(message.channel, ":(")
+      else:
+	 await client.send_message(message.channel, "Please only answer with yes or no")
 	  
 	
 
