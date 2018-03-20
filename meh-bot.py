@@ -48,18 +48,6 @@ __**Commands**__
       args = message.content.split(" ")
       await client.send_message(message.channel, "<@%s>, %s" % ((userID), " ".join(args[1:])))
 	  	 	  
-			  
-  if message.content.lower().startswith("~lilq"):
-    await client.send_message(message.channel, "Do you like fish?")
-    if message.content == "yes":
-      await client.delete_message(message)
-      await client.send_message(message.channel, "Nice, me too. Bloop!")
-    elif message.content == "no":
-      await client.delete_message(message)
-      await client.send_message(message.channel, ":(")
-    else:
-      await client.delete_message(message)
-      await client.send_message(message.channel, "Please only answer with yes or no")
 
 
 client.run("Token")
