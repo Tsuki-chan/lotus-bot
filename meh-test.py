@@ -24,16 +24,19 @@ async def on_message(message):
 	  await client_send_message(message.channel,"%s" % (" ".join(args[1])))
 	else await client.send_message(message.channel, "Only Lotus can use this command")
   
+ 			  
   if message.content.lower().startswith("~lilq"):
     await client.send_message(message.channel, "Do you like fish?")
-      if message.content == "yes":
-         await client.send_message(message.channel, "Nice, me too. Bloop!")
-      elif message.content == "no":
-	 await client.send_message(message.channel, ":(")
-      else:
-	 await client.send_message(message.channel, "Please only answer with yes or no")
-	  
-	
+    if message.content == "yes":
+      await client.delete_message(message)
+      await client.send_message(message.channel, "Nice, me too. Bloop!")
+    elif message.content == "no":
+      await client.delete_message(message)
+      await client.send_message(message.channel, ":(")
+    else:
+      await client.delete_message(message)
+      await client.send_message(message.channel, "Please only answer with yes or no")
+
 
 	
 	
