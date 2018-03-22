@@ -24,7 +24,7 @@ async def on_message(message):
   if message.content.lower().startswith('~meh'):
     await client.send_message(message.channel, "meh!")
 
-  if message.content.lower().startswith('~good night') or message.content.lower().startswith('~nighty') or message.content.lower().startswith('gn'):
+  if message.content.lower().startswith('~goodnight') or message.content.lower().startswith('~nighty') or message.content.lower().startswith('~gn'):
     userID = message.author.id
     await client.send_message(message.channel, ("<@%s> Sleep well, my precious meh-mber ^^ :heart:") % (userID))
 
