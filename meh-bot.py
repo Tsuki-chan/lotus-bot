@@ -13,7 +13,7 @@ async def on_ready():
   
 @client.event
 async def on_message(message):
-  if message.content.lower().startswith == "~cookie":
+  if message.content.lower().startswith('~cookie'):
     await client.send_message(message.channel, ":cookie:")
 
   if message.content.lower().startswith('~ping'):
@@ -24,7 +24,7 @@ async def on_message(message):
   if message.content.lower().startswith('~meh'):
     await client.send_message(message.channel, "meh!")
 
-  if message.content.lower() == ("good night") or message.content.lower() == ("nighty") or message.content.lower() == ("gn"):
+  if message.content.lower().startswith('~good night') or message.content.lower().startswith('~nighty') or message.content.lower().startswith('gn'):
     userID = message.author.id
     await client.send_message(message.channel, ("<@%s> Sleep well, my precious meh-mber ^^ :heart:") % (userID))
 
@@ -33,7 +33,7 @@ async def on_message(message):
     await client.delete_message(message)
     await client.send_message(message.channel, "<@%s> has paid their respects :heart_exclamation:" % (userID))    
 
-  if message.content.lower() == "~help" or message.content.lower() =="~commands" or message.content.lower() =="~command":
+  if message.content.lower().startswith('~help') or message.content.lower().startswith('~command'):
     await client.send_message(message.channel, """
 __**Commands**__
 ```- the prefix is a "~" not a "-"
